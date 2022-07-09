@@ -1,0 +1,9 @@
+.caja {
+    text-align: center;
+    font-weight: 500;
+    color: black;
+    background: yellow;
+    margin: 0 0 25px;
+    overflow: hidden;
+    padding: 20px;
+}

@@ -1,0 +1,80 @@
+img{
+    width: 100%;
+}
+
+.navbar-text .login{
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.contenedor{
+    margin-top: -70px;
+    padding: 0 27%;
+}
+
+ul>a{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    text-decoration: none;
+    color: white;
+    padding-left: 2rem;
+}
+
+ul>a:hover{
+    color: #D4AC0D;
+}
+
+/* Productos */
+
+.label{
+    position: relative;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.card{
+    margin-top: 30px;
+    align-items: center;
+}
+
+.card-body{
+    text-align: center;
+}
+
+.img{
+    width: 250px;
+    position: absolute;
+    margin: 0 62%;
+    margin-top: -70px;
+}
+
+.redes{
+    width: 25px;
+    position: absolute;
+    margin: 0 30%;
+    margin-top: -60px;
+}
+
+.redes2{
+    width: 23px;
+    position: absolute;
+    margin: 0 33%;
+    margin-top: -60px;
+}
+
+.redes3{
+    width: 30px;
+    position: absolute;
+    margin: 0 35.5%;
+    margin-top: -62px;
+}
+
+/* ETC */
+
+p{
+    text-emphasis: justify;
+}
+
+.tittle{
+    text-align: center;
+}

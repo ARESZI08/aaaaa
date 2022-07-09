@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>INKABUSINESS</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/form.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html"><img src="/img/inka.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </ul>
+            <span class="navbar-text">
+              <a style="color: yellow;" class="login" href="#">Iniciar Sesión</a>
+            </span>
+          </div>
+        </div>
+      </nav>
+
+      <div>
+        <img src="../img/banner.jpg" alt="">
+    </div>
+
+    <br><br>
+    <h3 class="tittle">LIBRO DE RECLAMACIONES</h3>
+    
+    <br><br>
+    <form  id="formulario">
+
+        <input type="servicio" placeholder="Escriba su nombre.*" id="nombre" name="nombre" required>
+        <br><br>
+        <input type="nombre" placeholder="Escriba su apellido.*" id="apellido" name="apellido" required>
+        <br><br>
+        <input type="telefono" placeholder="Escriba su teléfono*" id="telefono" name="telefono" required>
+        <br><br>
+        <input type="correo" placeholder="Escriba su correo electrónico*" id="correo" name="correo" required>
+        <br><br>
+        <input class="reclamo" type="nombre" placeholder="Escriba su reclamo.*" id="reclamos" name="reclamo" required>
+        <br><br>
+        <button class="submit">Enviar</button>
+
+    </form>
+
+
+    <br><br><br>
+    <h1>Registro de Reclamos</h1>
+    <center><table id="tabla" border="1">
+        <thead>
+              <tr>
+                  <td>Nombre</td><br>
+                  <td>Apellido</td><br>
+                  <td>Telefono</td><br>
+                  <td>Correo</td><br>
+                  <td>Reclamo</td><br>
+              </tr>
+        </thead>
+            <tbody>
+
+            </tbody>
+    </table></center>
+  
+
+    <script>
+        $(document).ready(function() {
+          $.ajax({
+              type: "GET",
+              url: "http://localhost:5000/api/reclamos/",
+              dataType: "json",
+              success: function (data) {
+                $.each(data, function(i, item) {
+                    console.log(item.nombre, item.apellido)
+                    var fila =  "<tr>" +
+                        "<td>" + item.nombre + "</td>" +
+                        "<td>" + item.apellido + "</td>" +
+                        "<td>" + item.telefono + "</td>" + 
+                        "<td>" + item.correo + "</td>" +
+                        "<td>" + item.reclamos + "</td>" +
+                           "</tr>"
+                    $("#tabla>tbody").append(fila)
+                });
+              }
+          });
+        });
+
+        $("#formulario").on('submit', function(e) {
+            var datos = { nombre: $("#nombre").val(), apellido: $("#apellido").val(), telefono: $("#telefono").val(), correo: $("#correo").val(), reclamos: $("#reclamos").val()}
+            var datosJson = JSON.stringify(datos);
+            var ajax_request = new XMLHttpRequest();
+            ajax_request.open("POST", "http://localhost:5000/api/reclamos/", true);
+            ajax_request.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+            ajax_request.send(datosJson);
+        });
+    </script>
+
+
+</div>
+<br><br><br>
+<!-- FOOTER -->
+
+<div class="footer">
+  <footer class="bg-dark text-center text-lg-start">
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+  
+          <ul class="list-unstyled mb-0">
+            <li>
+              <h6 style="color: #D4AC0D;">Comunícate con nostros:</h6>
+            </li>
+            <li>
+              <h6 style="color: #D4AC0D;">Lima y Provincias
+              <br> (01) 987 65432</h6>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+  
+          <ul class="list-unstyled mb-0">
+            <li>
+              <h6 style="color: #D4AC0D;">Sobre Nosotros</h6>
+            </li>
+            <li>
+              <a style="text-decoration: none; color: #D4AC0D;" href="nosotros.html" target="_blank">Conócenos</a>
+            </li>
+            <li>
+              <h6 style="color: #D4AC0D;">Síguenos en:</h6>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+  
+          <ul class="list-unstyled mb-0">
+            <li>
+              <h6 style="color: #D4AC0D; margin: 0 -65px;">Ayuda y Contacto</h6>
+            </li>
+            <li>
+              <a style="text-decoration: none; color: #D4AC0D; margin: 0 -65px;" href="libro.html" target="_blank">Libro de Reclamaciones</a>
+            </li>
+            <li>
+              <a style="text-decoration: none; color: #D4AC0D; margin: 0 -65px;" href="tyc.html" target="_blank">Términos y condiciones</a>
+            </li>
+          </ul>
+        </div>
+
+        <ul class="list-unstyled mb-0">
+          <li>
+            <img class="img" src="img/inka.png" alt="">
+          </li>
+          <br>
+          <br>
+        </ul>
+      </div>
+      </div>
+    </div>
+
+    <div class="redes">
+      <a href="#"><img src="img/facebook.png" alt=""></a>
+    </div>
+
+    <div class="redes2">
+      <a href="#"><img src="img/instagram.png" alt=""></a>
+    </div>
+
+    <div class="redes3">
+      <a href="#"><img src="img/twiter.png" alt=""></a>
+    </div>
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgb(36, 35, 35);">
+      <h6 style="color: #ffffff; margin: 0px;">© 2022 Copyright: Inkabusiness.com</h6>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>
