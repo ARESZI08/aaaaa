@@ -13,7 +13,7 @@ img{
 
 .contenedor{
     margin-top: -70px;
-    padding: 0 27%;
+    padding: 0 25%;
 }
 
 ul>a{
@@ -56,7 +56,7 @@ ul>a:hover{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 100px;
+    margin: 300px;
     margin-top: -3px;
 }
 
@@ -102,6 +102,10 @@ ul>a:hover{
 }
 
 /* FOOTER */
+
+.footer{
+    margin-top: -200px;
+}
 
 .img{
     width: 250px;
