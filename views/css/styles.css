@@ -2,6 +2,10 @@ img{
     width: 100%;
 }
 
+.image2{
+    width:100%
+}
+
 .navbar-text .login{
     text-decoration: none;
     font-size: 20px;
@@ -24,12 +28,44 @@ ul>a:hover{
     color: #D4AC0D;
 }
 
-/* Productos */
+
 
 .label{
     position: relative;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 70px;
+}
+
+/* Productos */
+
+.page-nav{
+    margin: 0 75%;
+    color: #D4AC0D;
+}
+
+.button-checkout {
+    width: 105px;
+    height: 55px;
+    background-color: yellow;
+    color: black;
+    border-color: yellow;
+    border-radius: 8px;
+}
+
+.tarjetas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 100px;
+    margin-top: -3px;
+}
+
+.card-index{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20%;
+    margin-top: -8px;
 }
 
 .card{
@@ -40,6 +76,8 @@ ul>a:hover{
 .card-body{
     text-align: center;
 }
+
+/* FOOTER */
 
 .img{
     width: 250px;
