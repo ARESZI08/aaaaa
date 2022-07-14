@@ -18,7 +18,7 @@ variables:
   environmentName: 'inkabusiness'
 
   # Agent VM image name
-  vmImageName: 'inkabusiness-pool'
+  vmImageName: 'certus-app'
 
 stages:
 - stage: Build
@@ -26,7 +26,8 @@ stages:
   jobs:
   - job: Build
     displayName: Build
-    pool:
+    pool: 
+      name: inkabusiness-pool
       vmImage: $(vmImageName)
 
     steps:
@@ -62,6 +63,7 @@ stages:
     displayName: Deploy
     environment: $(environmentName)
     pool:
+      name: inkabusiness-pool
       vmImage: $(vmImageName)
     strategy:
       runOnce:
