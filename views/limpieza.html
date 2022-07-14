@@ -46,6 +46,10 @@
       <h1 class="caja">LIMPIEZA</h1>
 
       <!-- PRODUCTOS -->
+
+      <div class="page-nav">
+        <button id="checkout" class="button-checkout" onclick="showOrder()">Carrito</button>
+      </div>
   
       <div class="tarjetas">
 
@@ -155,7 +159,7 @@
                         <li class="list-group-item">s/ ${item.costo}</li>
                       </ul>
                       <div class="card-body">
-                        <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                        <a class="btn btn-primary" onclick="add('${item.nombre}', ${item.costo})">Añadir al carrito</a>
                       </div>
                     </div> `;
 
@@ -166,7 +170,9 @@
       });
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="js/cart.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   
   </body>
 </html>
