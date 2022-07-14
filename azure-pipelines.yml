@@ -18,7 +18,7 @@ variables:
   environmentName: 'inkabusiness'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+  vmImageName: 'certus-app'
 
 stages:
 - stage: Build
